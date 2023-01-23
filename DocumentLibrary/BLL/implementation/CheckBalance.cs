@@ -1,6 +1,6 @@
-﻿using DocumentLibrary.ATM.Attributes;
+﻿using DocumentLibrary.Attributes;
 
-namespace DocumentLibrary.ATM.BLL.implementation
+namespace DocumentLibrary.BLL.implementation
 {
     [Document(Description = "This is for Checking Balance")]
     public class CheckBalance

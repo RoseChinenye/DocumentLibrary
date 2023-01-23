@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DocumentLibrary.ATM.Attributes
+namespace DocumentLibrary.Attributes
 {
     [AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
     public sealed class DocumentAttribute : Attribute

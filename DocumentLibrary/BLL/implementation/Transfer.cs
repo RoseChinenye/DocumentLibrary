@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Transactions;
-using DocumentLibrary.ATM.Attributes;
-using DocumentLibrary.ATM.Data;
+using DocumentLibrary.Attributes;
 
-namespace DocumentLibrary.ATM.BLL.implementation
+namespace DocumentLibrary.BLL.implementation
 {
     [Document(Description = "This is for Transfer")]
     public class Transfer

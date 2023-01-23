@@ -1,4 +1,4 @@
-﻿using DocumentLibrary.ATM.Attributes;
+﻿using DocumentLibrary.Attributes;
 using System;
 
 namespace DocumentLibrary.ATM.BLL.implementation

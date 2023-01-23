@@ -1,6 +1,6 @@
-﻿using DocumentLibrary.ATM.Attributes;
+﻿using DocumentLibrary.Attributes;
 
-namespace DocumentLibrary.ATM.Data
+namespace DocumentLibrary.Data
 {
     [Document(Description = "These includes the amount and the balance of an account")]
     public enum numbers

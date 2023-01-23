@@ -1,5 +1,5 @@
 ﻿
-using DocumentLibrary.ATM.DisplayAttributes;
+using DocumentLibrary.Attributes;
 
 namespace Test
 {
@@ -7,8 +7,10 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            DisplayAttributes doc = new DisplayAttributes();
-            doc.GetDocs();
+            //DisplayAttributes.GetDocs();
+
+            WriteToTextFile.GetTextFile();
+            
         }
     }
 }
