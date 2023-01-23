@@ -1,5 +1,6 @@
-﻿
-using DocumentLibrary.Attributes;
+﻿using DocumentLibrary.Attributes;
+using DocumentLibrary.FileIO;
+
 
 namespace Test
 {
@@ -9,7 +10,11 @@ namespace Test
         {
             //DisplayAttributes.GetDocs();
 
-            WriteToTextFile.GetTextFile();
+            //WriteToTextFile.GetTextFile();
+
+            //ReadFromTextFile.ReadTextFile();
+
+            WriteToJsonFile.GetJsonFile();
             
         }
     }

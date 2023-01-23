@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
+using DocumentLibrary.Attributes;
 
-namespace DocumentLibrary.Attributes
+namespace DocumentLibrary.FileIO
 {
     public static class WriteToTextFile
     {
@@ -13,7 +12,7 @@ namespace DocumentLibrary.Attributes
         {
             Console.WriteLine();
 
-            using (StreamWriter writer = File.CreateText("AttributesFile.txt"))
+            using (StreamWriter writer = new StreamWriter("AttributesFile.txt"))
             {
 
                 var assembly = Assembly.GetExecutingAssembly();
