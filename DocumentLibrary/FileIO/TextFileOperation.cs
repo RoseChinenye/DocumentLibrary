@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Reflection;
 using DocumentLibrary.Attributes;
 
 namespace DocumentLibrary.FileIO
@@ -10,12 +8,11 @@ namespace DocumentLibrary.FileIO
     {
         public static void WriteToText()
         {
-            
-            var getDocument = DisplayAttributes.GetDocs();
+            var DocAttribute = DisplayAttributes.GetDocs();
 
             try
             {
-                File.WriteAllText("AttributeFile.txt", getDocument);
+                File.WriteAllText("TextAttributeFile.txt", DocAttribute);
 
                 Console.WriteLine("\nCreated a text file named AttributeFile and wrote the output of GetDocs() to it...");
             }
@@ -29,9 +26,9 @@ namespace DocumentLibrary.FileIO
         {
             try
             {
-                var txtText = File.ReadAllText("AttributeFile.txt");
+                var DocAttribute = File.ReadAllText("TextAttributeFile.txt");
 
-                Console.WriteLine(txtText);
+                Console.WriteLine(DocAttribute);
             }
             catch (Exception e)
             {

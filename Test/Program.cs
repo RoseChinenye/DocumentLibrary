@@ -1,4 +1,4 @@
-﻿using DocumentLibrary.Attributes;
+﻿
 using DocumentLibrary.FileIO;
 
 
@@ -8,17 +8,53 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            //DisplayAttributes.GetDocs();
+Start: try
+            {
+                Console.WriteLine("------------This App Writes to and Reads from a text and Json file!-------------");
+                Console.WriteLine("Enter 1, 2, 3, 4 or 5\n1: Write to Text File (FileName: TextAttributeFile)\n2: Read from the Text File \n3: Write to Json File (FileName: JsonAttributeFile) \n4: Read from the Json File \n5: Exit \n");
 
-            //TextFileOperation.WriteToText();
+                var selection = Console.ReadLine();
+                if (int.TryParse(selection, out int option))
+                {
 
-            TextFileOperation.ReadFromText();
+                    switch (option)
+                    {
+                        case 1:
+                            Console.Clear();
+                            TextFileOperation.WriteToText();
+                            break;
+                        case 2:
+                            Console.Clear();
+                            TextFileOperation.ReadFromText();
+                            break;
+                        case 3:
+                            Console.Clear();
+                            JsonFileOperation.WriteToJson();
+                            break;
+                        case 4:
+                            Console.Clear();
+                            JsonFileOperation.ReadFromJson();
+                            break;
+                        case 5:
+                            Environment.Exit(0);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Input!");
+                    Console.ReadLine();
+                    Console.Clear();
+                    goto Start;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
 
-            //WriteToXmlFile.GetXmlFile();
-
-            //JsonFileOperation.WriteToJson();
-
-            //JsonFileOperation.ReadFromJson();
+            }
 
         }
     }

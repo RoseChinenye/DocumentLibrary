@@ -12,7 +12,7 @@ namespace DocumentLibrary.FileIO
         
         public static void WriteToJson()
         {
-            var getDocuments = DisplayAttributes.GetDocs();
+            var DocAttribute = DisplayAttributes.GetDocs();
 
             try
             {
@@ -22,8 +22,8 @@ namespace DocumentLibrary.FileIO
                     WriteIndented = true
                 };
 
-                string jsonText = JsonSerializer.Serialize(getDocuments, options);
-                File.WriteAllText("AttributeFile.json", jsonText);
+                string jsonText = JsonSerializer.Serialize(DocAttribute, options);
+                File.WriteAllText("JsonAttributeFile.json", jsonText);
 
                 Console.WriteLine("\nCreated a text file named AttributeFile and wrote the output of GetDocs() to it...");
             }
@@ -37,9 +37,9 @@ namespace DocumentLibrary.FileIO
         {
             try
             {
-                string json = File.ReadAllText("AttributeFile.json");
+                string jsonFile = File.ReadAllText("JsonAttributeFile.json");
 
-                var getDocuments = JsonSerializer.Deserialize<string>(json);
+                var getDocuments = JsonSerializer.Deserialize<string>(jsonFile);
                 Console.WriteLine(getDocuments);
 
             }
