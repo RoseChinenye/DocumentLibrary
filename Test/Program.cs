@@ -10,7 +10,7 @@ namespace Test
         {
 Start: try
             {
-                Console.WriteLine("------------This App Writes to and Reads from a text and Json file!-------------");
+                Console.WriteLine("****************This App Writes to and Reads from a text and Json file!***************\n");
                 Console.WriteLine("Enter 1, 2, 3, 4 or 5\n1: Write to Text File (FileName: TextAttributeFile)\n2: Read from the Text File \n3: Write to Json File (FileName: JsonAttributeFile) \n4: Read from the Json File \n5: Exit \n");
 
                 var selection = Console.ReadLine();
