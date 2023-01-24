@@ -3,7 +3,7 @@
 namespace DocumentLibrary.Attributes
 {
     [AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
-    public sealed class DocumentAttribute : Attribute
+    public class DocumentAttribute : Attribute
     {
         public string Description { get; set; }
         public string Input { get; set; }

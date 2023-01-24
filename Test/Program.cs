@@ -10,12 +10,16 @@ namespace Test
         {
             //DisplayAttributes.GetDocs();
 
-            //WriteToTextFile.GetTextFile();
+            //TextFileOperation.WriteToText();
 
-            //ReadFromTextFile.ReadTextFile();
+            TextFileOperation.ReadFromText();
 
-            WriteToJsonFile.GetJsonFile();
-            
+            //WriteToXmlFile.GetXmlFile();
+
+            //JsonFileOperation.WriteToJson();
+
+            //JsonFileOperation.ReadFromJson();
+
         }
     }
 }
