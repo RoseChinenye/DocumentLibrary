@@ -12,8 +12,11 @@ namespace DocumentLibrary.FileIO
 
             try
             {
-                File.WriteAllText("TextAttributeFile.txt", DocAttribute);
-
+                using (StreamWriter writer = new StreamWriter("TextAttributeFile.txt"))
+                {
+                    writer.Write(DocAttribute);
+                }
+                
                 Console.WriteLine("\nCreated a text file named AttributeFile and wrote the output of GetDocs() to it...");
             }
             catch (Exception e)
@@ -26,9 +29,15 @@ namespace DocumentLibrary.FileIO
         {
             try
             {
-                var DocAttribute = File.ReadAllText("TextAttributeFile.txt");
+                using (StreamReader reader = File.OpenText("TextAttributeFile.txt"))
+                {
+                    string input = null;
 
-                Console.WriteLine(DocAttribute);
+                    while ((input = reader.ReadLine()) != null)
+                    {
+                        Console.WriteLine(input);
+                    }
+                }
             }
             catch (Exception e)
             {

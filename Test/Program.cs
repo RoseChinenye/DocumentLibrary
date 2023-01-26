@@ -29,7 +29,7 @@ Start: try
                             break;
                         case 3:
                             Console.Clear();
-                            JsonFileOperation.WriteToJson();
+                            JsonFileOperation.GetDocs();
                             break;
                         case 4:
                             Console.Clear();

@@ -13,7 +13,7 @@ namespace DocumentLibrary.Attributes
 
                 var assembly = Assembly.GetExecutingAssembly();
 
-                output += (assembly);
+                output += assembly;
                 var types = assembly.GetTypes();
 
 
@@ -25,8 +25,8 @@ namespace DocumentLibrary.Attributes
                     {
                         if (type.IsClass)
                         {
-                            output += ("\nClass: " + type.Name);
-                            output +=("\nDescription: \n" + ((DocumentAttribute)attributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description);
+                            output += "Class: " + type.Name + "\n";
+                            output += "\tDescription: " +((DocumentAttribute)attributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description + "\n\n";
                             
 
 
@@ -35,9 +35,9 @@ namespace DocumentLibrary.Attributes
                                 var constructorAttributes = constructor.GetCustomAttributes(typeof(DocumentAttribute), true);
                                 if (constructorAttributes.Length > 0)
                                 {
-                                    output +=("Constructor: " + constructor.Name);
-                                    output +=("\tDescription: " +((DocumentAttribute)constructorAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description);
-                                    output +=("\tInput: " +((DocumentAttribute)constructorAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Input);
+                                    output += "Constructor: " + constructor.Name + "\n" ;
+                                    output += "\tDescription: " +((DocumentAttribute)constructorAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description + "\n";
+                                    output += "\tInput: " +((DocumentAttribute)constructorAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Input + "\n\n";
                                     
                             }
                             }
@@ -47,10 +47,10 @@ namespace DocumentLibrary.Attributes
                                 var methodAttributes = method.GetCustomAttributes(typeof(DocumentAttribute), true);
                                 if (methodAttributes.Length > 0)
                                 {
-                                    output +=("Method: " + method.Name);
-                                    output +=("\tDescription: " +((DocumentAttribute)methodAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description);
-                                    output +=("\tInput: " + ((DocumentAttribute)methodAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Input);
-                                    output +=("\tOutput: " + ((DocumentAttribute)methodAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Output);
+                                    output += "Method: " + method.Name + "\n" ;
+                                    output += "\tDescription: " +((DocumentAttribute)methodAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description + "\n";
+                                    output += "\tInput: " +((DocumentAttribute)methodAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Input + "\n";
+                                    output += "\tOutput: " +((DocumentAttribute)methodAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Output + "\n\n";
                                     
                                 }
                             }
@@ -60,9 +60,9 @@ namespace DocumentLibrary.Attributes
                                 var propertyAttributes = property.GetCustomAttributes(typeof(DocumentAttribute), true);
                                 if (propertyAttributes.Length > 0)
                                 {
-                                    output +=("Property: " + property.Name);
-                                    output +=("\tDescription: " +((DocumentAttribute)propertyAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description);
-                                    output +=("\tOutput: " +((DocumentAttribute)propertyAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Output);
+                                    output += "Property: " + property.Name + "\n";
+                                    output += "\tDescription: " +((DocumentAttribute)propertyAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description + "\n";
+                                    output += "\tOutput: " +((DocumentAttribute)propertyAttributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Output + "\n\n";
                                     
                                 }
                             }
@@ -71,14 +71,14 @@ namespace DocumentLibrary.Attributes
 
                         if (type.IsEnum)
                         {
-                            output +=("Enum: " + type.Name);
+                            output += "\n\n" + "Enum: " + type.Name + "\n";
                             //unboxing happens here: Converting an object to a value type.
-                            output +=("\tDescription: " +((DocumentAttribute)attributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description);
+                            output += "\tDescription: " +((DocumentAttribute)attributes.SingleOrDefault(a => a.GetType() == typeof(DocumentAttribute)))?.Description + "\n";
 
                             string[] names = type.GetEnumNames();
                             foreach (string name in names)
                             {
-                                output +=(name);
+                                output += "\t" + name + "\n";
 
                             }
                         }
